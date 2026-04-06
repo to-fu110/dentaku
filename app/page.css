@@ -1,0 +1,31 @@
+button {
+    width:60px;
+    height:40px;
+    background-color: #6b6b6b;
+    color: white;
+    border-color: #424242;
+    border-width: 2px;
+    padding: 10px 20px;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+input {
+    background-color: #aaa;
+    color:#000;
+    border-color:#424242;
+    border-width: 2px;
+    border-radius: 5px;
+    height:40px;
+    width:400px;
+    font-size:larger
+}
+
+.buttons {
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 200px;
+}
+
+
+
