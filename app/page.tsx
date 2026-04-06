@@ -14,28 +14,28 @@ export default function App() {
     switch (mode) {
       case "+":
         setMode('none');
-        return(result + value);
+        return (result + value);
       case "-":
         setMode('none');
-        return(result - value);
+        return (result - value);
       case "*":
         setMode('none');
-        return(result * value);
+        return (result * value);
       case "/":
         setMode('none');
-        return(result / value);
+        return (result / value);
       case "none":
         return value;
     }
-    
-  };  
+
+  };
 
   const layout = [
+    "DEL", "AC",
     "7", "8", "9", "/",
     "4", "5", "6", "*",
     "1", "2", "3", "-",
-    "0", ".", "=", "+",
-    "DEL", "AC"
+    "0", ".", "=", "+"
   ];
 
   const handleBtnClk = (btn: string) => {
@@ -62,15 +62,17 @@ export default function App() {
   }
 
   return (
-    <div>
+    <div className="container">
       <input value={display} readOnly={true} />
       <p>Result: {result}</p>
       <section className="buttons">
 
         {layout.map((btn: string) => (
-          <button key={btn} onClick={() => handleBtnClk(btn)}>{btn}</button>
+          <button className={`${(btn >= '0' && btn <= '9')|| btn === '.' ? 'number' : btn === "DEL" || btn === "AC" ? 'del-ac' : 'operator'}`} 
+            key={btn} onClick={() => handleBtnClk(btn)}
+          >{btn}</button>
         ))}
-        
+
       </section>
     </div>
   )
